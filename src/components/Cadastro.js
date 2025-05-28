@@ -41,7 +41,8 @@ const Cadastro = () => {
     if (!validate()) return;
     
     try {
-      const response = await axios.post('http://localhost:5000/api/alunos', formData);
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/alunos`, formData);
+
       setMessage('Aluno cadastrado com sucesso!');
       setFormData({
         nome_completo: '',
